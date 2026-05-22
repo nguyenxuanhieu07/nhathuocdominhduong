@@ -1,0 +1,28 @@
+body {
+	font-family: "Inter", sans-serif;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: #000;
+
+	&:hover {
+		color: $color_a;
+		text-decoration: none;
+	}
+}
+
+
+.object-img {
+	img {
+		object-fit: cover;
+		object-position: 50% 50%;
+		-o-object-position: 50% 50%;
+		width: 100%;
+		height: 100%;
+	}
+}
