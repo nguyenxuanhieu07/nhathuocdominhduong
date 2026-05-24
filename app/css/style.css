@@ -492,6 +492,7 @@ a:hover {
 .home-list-expert {
   position: relative;
   margin-top: -30px;
+  margin-bottom: 40px;
 }
 .home-list-expert .box-expert {
   border: 1px solid #D7A444;
@@ -504,7 +505,6 @@ a:hover {
   margin-bottom: -30px;
 }
 .home-list-expert .box-expert-content {
-  background: #3D2411;
   text-align: center;
   background: linear-gradient(180deg, rgb(61, 36, 17) 0%, rgb(96, 58, 33) 100%);
   padding: 23px;
@@ -528,6 +528,80 @@ a:hover {
   font-weight: 700;
   margin-bottom: 20px;
   margin-bottom: 0;
+}
+
+.list-step-expert {
+  background: #D7BB88;
+  padding: 20px;
+  border-radius: 20px;
+}
+.list-step-expert .item {
+  position: relative;
+}
+.list-step-expert .item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 90%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+}
+.list-step-expert .inner {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+.list-step-expert .inner-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3D2411;
+  border-radius: 50%;
+}
+.list-step-expert .inner-number {
+  font-family: "Poltawski Nowy", serif;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3D2411;
+}
+.list-step-expert .inner-title {
+  font-family: "Poltawski Nowy", serif;
+  font-size: 17px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #3D2411;
+}
+.list-step-expert .inner-text {
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 0;
+}
+
+.s-treatment_philosophy {
+  background: url(/images/bg-treatment_philosophy.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 90px 0;
+}
+
+.l-treatment_philosophy .inner-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3D2411;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.l-treatment_philosophy .inner-text {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: #444444;
 }
 
 @media (max-width: 575px) {

@@ -298,6 +298,7 @@
 .home-list-expert {
 	position: relative;
 	margin-top: -30px;
+	margin-bottom: 40px;
 	.box-expert {
 		border: 1px solid $color_yelow;
 		border-radius: 18px;
@@ -310,7 +311,6 @@
 		}
 
 		&-content {
-			background: $color_brown;
 			text-align: center;
 			background: linear-gradient(180deg, rgba(61, 36, 17, 1) 0%, rgba(96, 58, 33, 1) 100%);
 			padding: 23px;
@@ -320,7 +320,7 @@
 		}
 
 		.degree {
-			color: $color_yelow;
+			color: $color_yelow; 
 			margin-bottom: 0;
 			font-family: "Poltawski Nowy", serif;
 			font-size: 18px;
@@ -336,6 +336,84 @@
 			font-weight: 700;
 			margin-bottom: 20px;
 			margin-bottom: 0;
+		}
+	}
+}
+
+.list-step-expert{
+	background: $color_yelow_d;
+	padding: 20px;
+	border-radius: 20px;
+	.item{
+		position: relative;
+		&:not(:last-child){
+			&::after{
+				content: '';
+				position: absolute;
+				width: 1px;
+				height: 90%;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				background: $color_white;
+			}
+		}
+	}
+	.inner{
+		display: flex;
+		align-items: center;
+		column-gap: 12px;
+		&-icon{
+			flex-shrink: 0;
+			width: 60px;
+			height: 60px;
+			padding: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid $color_brown;
+			border-radius: 50%;
+		}
+		&-number{
+			font-family: "Poltawski Nowy", serif;
+			margin-bottom: 0;
+			font-size: 24px;
+			font-weight: 700;
+			color: $color_brown;
+		}
+		&-title{
+			font-family: "Poltawski Nowy", serif;
+			font-size: 17px;
+			margin-bottom: 8px;
+			font-weight: 700;
+			color: $color_brown;
+		}
+		&-text{
+			font-size: 14px;
+			color: $color_gray;
+			margin-bottom: 0;
+		}
+	}
+}
+.s-treatment_philosophy{
+	background: url(/images/bg-treatment_philosophy.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 90px 0;
+}
+.l-treatment_philosophy{
+	.inner{
+		&-title{
+			font-size: 16px;
+			font-weight: 700;
+			color: $color_brown;
+			margin-bottom: 8px;
+			text-transform: uppercase;
+		}
+		&-text{
+			font-size: 14px;
+			margin-bottom: 0;
+			color: $color_gray;
 		}
 	}
 }
