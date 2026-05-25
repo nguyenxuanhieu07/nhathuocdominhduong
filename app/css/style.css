@@ -23,6 +23,44 @@ a:hover {
   height: 100%;
 }
 
+.inner-flex {
+  display: flex;
+  gap: 10px;
+}
+.inner-icon {
+  margin-bottom: 15px;
+}
+.inner-desc {
+  font-size: 14px;
+  color: #444444;
+}
+.inner-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3D2411;
+  margin-bottom: 8px;
+}
+.inner-text {
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 0;
+}
+.inner-number {
+  font-family: "Poltawski Nowy", serif;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3D2411;
+}
+
+.title-section {
+  color: #D7A444;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
 .header-info-address {
   background: #FAF7F1;
 }
@@ -235,6 +273,55 @@ a:hover {
     column-gap: 10px;
   }
 }
+.post {
+  border-radius: 18px;
+  overflow: hidden;
+  height: 100%;
+}
+.post-bg {
+  background-color: #fff;
+}
+.post-bg .post-content {
+  padding: 18px 12px;
+}
+.post-bg .post-thumbnail {
+  margin-bottom: 0;
+}
+.post-thumbnail {
+  width: 100%;
+  height: 168px;
+  overflow: hidden;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  display: block;
+}
+.post-thumbnail img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  -o-object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+}
+.post-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #3D2411;
+  text-transform: capitalize;
+}
+.post-title a {
+  color: #3D2411;
+}
+.post-title a:hover {
+  color: #D7A444;
+  text-decoration: none;
+}
+.post-desc {
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 0;
+}
+
 .section-intro {
   position: relative;
   background-color: #FAF3EC;
@@ -318,7 +405,6 @@ a:hover {
 }
 .intro-list .inner {
   font-family: "Poltawski Nowy", serif;
-  display: flex;
   gap: 8px;
   position: relative;
 }
@@ -549,7 +635,6 @@ a:hover {
   background: #fff;
 }
 .list-step-expert .inner {
-  display: flex;
   align-items: center;
   column-gap: 12px;
 }
@@ -564,24 +649,8 @@ a:hover {
   border: 1px solid #3D2411;
   border-radius: 50%;
 }
-.list-step-expert .inner-number {
-  font-family: "Poltawski Nowy", serif;
-  margin-bottom: 0;
-  font-size: 24px;
-  font-weight: 700;
-  color: #3D2411;
-}
 .list-step-expert .inner-title {
-  font-family: "Poltawski Nowy", serif;
   font-size: 17px;
-  margin-bottom: 8px;
-  font-weight: 700;
-  color: #3D2411;
-}
-.list-step-expert .inner-text {
-  font-size: 14px;
-  color: #444444;
-  margin-bottom: 0;
 }
 
 .s-treatment_philosophy {
@@ -590,18 +659,291 @@ a:hover {
   background-position: center;
   padding: 90px 0;
 }
+.s-treatment_philosophy .section-desc {
+  font-size: 14px;
+}
+.s-treatment_philosophy .section-content {
+  position: relative;
+  z-index: 2;
+}
 
+.l-treatment_philosophy {
+  position: relative;
+  margin-top: -90px;
+}
+.l-treatment_philosophy .inner {
+  padding-top: 42px;
+}
 .l-treatment_philosophy .inner-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #3D2411;
-  margin-bottom: 8px;
   text-transform: uppercase;
 }
-.l-treatment_philosophy .inner-text {
+.l-treatment_philosophy .inner-icon {
+  position: relative;
+  z-index: 2;
+}
+.l-treatment_philosophy .inner-icon::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100px;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #D7A444;
+  z-index: -1;
+}
+.l-treatment_philosophy .inner-img {
+  position: relative;
+  width: 555px;
+  height: 370px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.l-treatment_philosophy .inner-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(/images/border-line.png) no-repeat top center;
+  background-size: contain;
+  top: 100px;
+  left: 0;
+}
+.l-treatment_philosophy .item:nth-child(3) .inner-icon::after {
+  left: -15px;
+  right: auto;
+}
+.l-treatment_philosophy .item:nth-child(4) .inner-icon::after {
+  left: auto;
+  right: 0;
+  width: 130px;
+  top: -45px;
+  transform: translateY(0) rotate(130deg);
+}
+.l-treatment_philosophy .item:nth-child(5) .inner {
+  padding-top: 100px;
+}
+.l-treatment_philosophy .item:nth-child(5) .inner-icon::after {
+  left: 50%;
+  right: auto;
+  width: 130px;
+  top: -15px;
+  transform: translate(-50%) rotate(90deg);
+}
+.l-treatment_philosophy .item:nth-child(6) .inner-icon::after {
+  left: auto;
+  left: 0;
+  width: 130px;
+  top: -30px;
+  transform: translateY(0) rotate(-130deg);
+}
+
+.s-list-cate {
+  padding: 90px 0;
+}
+
+.s-list-cate {
+  margin-bottom: 40px;
+}
+.s-list-cate .inner-icon {
+  background: #F6E8CC;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #F6E8CC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+.s-list-cate .inner-title {
   font-size: 14px;
   margin-bottom: 0;
-  color: #444444;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 500;
+}
+.s-list-cate .inner.active .inner-icon {
+  background: #D7A444;
+  border-color: #D7A444;
+}
+.s-list-cate .item {
+  position: relative;
+}
+.s-list-cate .item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 68px;
+  right: 0;
+  top: 30%;
+  transform: translateY(-50%);
+  background: #D7D7D7;
+}
+
+.s-regimen {
+  padding-bottom: 70px;
+  background: url(/images/bg-regimen.jpg) no-repeat center top;
+}
+.s-regimen .section-desc {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.c-regimen {
+  margin-bottom: 10px;
+}
+
+.s-box-qoute {
+  position: relative;
+}
+.s-box-qoute .qoute {
+  padding: 18px 0;
+  margin-bottom: 0;
+  font-family: "Poltawski Nowy", serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: #3D2411;
+}
+.s-box-qoute .author {
+  color: #D7A444;
+  font-size: 13px;
+  text-align: right;
+  font-weight: 600;
+  margin-bottom: 0;
+  position: relative;
+}
+.s-box-qoute .author::before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 1px;
+  background-color: #D7A444;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.s-box-qoute::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 22px;
+  background: url(/images/icon-quote.svg) no-repeat center;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+}
+.s-box-qoute::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 50px);
+  height: 1px;
+  background: #D7A444;
+  top: 0;
+  left: 50px;
+}
+
+.section-title-line {
+  color: #3D2411;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-title-line::before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 1px;
+  background-color: #D7A444;
+  left: -10px;
+  top: 50%;
+  transform: translate(-100%, -50%);
+}
+.section-title-line::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 1px;
+  background-color: #D7A444;
+  right: -10px;
+  top: 50%;
+  transform: translate(100%, -50%);
+}
+
+.s-quoute {
+  background: #3D2411;
+  padding: 60px 0;
+  position: relative;
+}
+.s-quoute .box-quoute {
+  position: relative;
+}
+.s-quoute .box-quoute::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 22px;
+  background: #3D2411 url(/images/icon-quote.svg) no-repeat center;
+  background-size: contain;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.s-quoute .box-quoute::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 1px;
+  background: #D7A444;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.s-quoute .qoute {
+  padding-top: 16px;
+  color: #fff;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  font-family: "Poltawski Nowy", serif;
+  margin-bottom: 0;
+}
+.s-quoute::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 17px;
+  left: 0;
+  bottom: 0;
+  background: url(/images/line_bg.svg) no-repeat center;
+  background-color: #3D2411;
+}
+
+.s-solution {
+  padding: 90px 0;
+}
+
+.lc-solution {
+  position: relative;
+}
+.lc-solution .inner {
+  align-items: center;
+}
+.lc-solution .inner-icon {
+  flex-shrink: 0;
+}
+.lc-solution .inner-title {
+  font-size: 18px;
+  margin-bottom: 0;
+  color: #D7A444;
 }
 
 @media (max-width: 575px) {
