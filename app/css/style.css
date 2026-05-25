@@ -945,6 +945,65 @@ a:hover {
   margin-bottom: 0;
   color: #D7A444;
 }
+.lc-solution .item {
+  position: relative;
+}
+.lc-solution .item:nth-child(1), .lc-solution .item:nth-child(2) {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.lc-solution .item:nth-child(1)::after, .lc-solution .item:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  width: 95%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: #D7A444;
+}
+.lc-solution .item:nth-child(2)::after {
+  left: auto;
+  right: 0;
+}
+.lc-solution .item:nth-child(1)::before, .lc-solution .item:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  background: #D7A444;
+  top: 0;
+  right: 0;
+}
+.lc-solution .item:nth-child(3)::before {
+  top: auto;
+  bottom: 0;
+  height: calc(100% + 10px);
+}
+
+.solution-boximg {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.solution-boximg .item {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.solution-boximg .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.solution-boximg .item:nth-child(1), .solution-boximg .item:nth-child(2) {
+  height: 130px;
+}
+.solution-boximg .item:nth-child(3) {
+  grid-column: 2;
+  grid-row: 1/span 2;
+  height: 276px;
+}
 
 @media (max-width: 575px) {
   .header-list-address {
