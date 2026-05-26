@@ -1311,3 +1311,707 @@
 		}
 	}
 }
+
+.s-treatment_philosophy {
+	background: url(/images/bg-treatment_philosophy.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 90px 0;
+
+	.section-desc {
+		font-size: 14px;
+	}
+
+	.section-content {
+		position: relative;
+		z-index: 2;
+	}
+
+	.box-img {
+		height: 706px;
+		aspect-ratio: 1140/706;
+		position: relative;
+		margin-top: -90px;
+	}
+}
+
+.l-treatment_philosophy {
+	position: relative;
+	margin-top: -90px;
+
+	.inner {
+		&-title {
+			text-transform: uppercase;
+		}
+
+		&-icon {
+			position: relative;
+			z-index: 2;
+		}
+
+		&-img {
+			position: relative;
+			width: 555px;
+			height: 370px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&-desc {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.s-list-cate {
+	padding: 90px 0;
+}
+
+.s-list-cate {
+	margin-bottom: 40px;
+
+	.inner {
+		&-icon {
+			background: $color_yelow_light;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			border: 1px solid $color_yelow_light;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 12px;
+		}
+
+		&-title {
+			font-size: 14px;
+			margin-bottom: 0;
+			text-transform: capitalize;
+			text-align: center;
+			font-weight: 500;
+		}
+
+		&.active {
+			.inner-icon {
+				background: $color_yelow;
+				border-color: $color_yelow;
+			}
+		}
+	}
+
+	.item {
+		position: relative;
+
+		&:not(:last-child) {
+			&::after {
+				content: "";
+				position: absolute;
+				width: 1px;
+				height: 68px;
+				right: 0;
+				top: 30%;
+				transform: translateY(-50%);
+				background: #D7D7D7;
+			}
+		}
+	}
+}
+
+.s-regimen {
+	padding-bottom: 70px;
+	background: #F7F1EA;
+
+	.section-desc {
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+
+	.content-section {
+		padding-top: 70px;
+	}
+}
+
+.c-regimen {
+	margin-bottom: 10px;
+}
+
+.s-box-qoute {
+	position: relative;
+
+	.qoute {
+		padding: 18px 0;
+		margin-bottom: 0;
+		font-family: "Poltawski Nowy", serif;
+		font-size: 18px;
+		font-weight: 500;
+		font-style: italic;
+		color: $color_brown;
+	}
+
+	.author {
+		color: $color_yelow;
+		font-size: 13px;
+		text-align: right;
+		font-weight: 600;
+		margin-bottom: 0;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 20%;
+			height: 1px;
+			background-color: $color_yelow;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 30px;
+		height: 22px;
+		background: url(/images/icon-quote.svg) no-repeat center;
+		background-size: contain;
+		top: 0;
+		left: 0;
+		transform: translateY(-50%);
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: calc(100% - 50px);
+		height: 1px;
+		background: $color_yelow;
+		top: 0;
+		left: 50px;
+	}
+}
+
+.section-title-line {
+	color: $color_brown;
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	position: relative;
+	width: max-content;
+	margin-left: auto;
+	margin-right: auto;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 20%;
+		height: 1px;
+		background-color: $color_yelow;
+		left: -10px;
+		top: 50%;
+		transform: translate(-100%, -50%);
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 20%;
+		height: 1px;
+		background-color: $color_yelow;
+		right: -10px;
+		top: 50%;
+		transform: translate(100%, -50%);
+	}
+}
+
+.s-quoute {
+	background: $color_brown;
+	padding: 60px 0;
+	position: relative;
+
+	.box-quoute {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 50px;
+			height: 22px;
+			background: $color_brown url(/images/icon-quote.svg) no-repeat center;
+			background-size: contain;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 40%;
+			height: 1px;
+			background: $color_yelow;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+	}
+
+	.qoute {
+		padding-top: 16px;
+		color: $color_white;
+		font-size: 20px;
+		font-style: italic;
+		font-weight: 400;
+		font-family: "Poltawski Nowy", serif;
+		margin-bottom: 0;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 17px;
+		left: 0;
+		bottom: 0;
+		background: url(/images/line_bg.svg) no-repeat center;
+		background-color: #3D2411;
+	}
+}
+
+.s-solution {
+	padding: 90px 0;
+}
+
+.lc-solution {
+	position: relative;
+
+	.inner {
+		align-items: center;
+
+		&-icon {
+			flex-shrink: 0;
+		}
+
+		&-title {
+			font-size: 18px;
+			margin-bottom: 0;
+			color: $color_yelow;
+		}
+	}
+
+	.item {
+		position: relative;
+
+		&:nth-child(1),
+		&:nth-child(2) {
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 95%;
+				height: 1px;
+				bottom: 0;
+				left: 0;
+				background: $color_yelow;
+			}
+		}
+
+		&:nth-child(2) {
+			&::after {
+				left: auto;
+				right: 0;
+			}
+		}
+
+		&:nth-child(1),
+		&:nth-child(3) {
+			&::before {
+				content: '';
+				position: absolute;
+				width: 1px;
+				height: 80%;
+				background: $color_yelow;
+				top: 0;
+				right: 0;
+			}
+		}
+
+		&:nth-child(3) {
+			&::before {
+				top: auto;
+				bottom: 0;
+				height: calc(100% + 10px);
+			}
+		}
+	}
+}
+
+.solution-boximg {
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	gap: 16px;
+	align-items: stretch;
+
+	.item {
+		overflow: hidden;
+		border-radius: 8px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		&:nth-child(1),
+		&:nth-child(2) {
+			height: 130px;
+		}
+
+		&:nth-child(3) {
+			grid-column: 2;
+			grid-row: 1 / span 2;
+			height: 276px;
+		}
+	}
+}
+
+.section-title {
+	color: $color_brown;
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	font-family: "Poltawski Nowy", serif;
+}
+
+// ======================
+// Section Lĩnh vực điều trị (s-list-cate)
+// ======================
+.s-list-cate {
+	background-color: #FAF5ED;
+	padding: 90px 0;
+	overflow: hidden;
+
+	.section-title {
+		margin-bottom: 16px;
+	}
+
+	.section-desc {
+		margin-bottom: 45px;
+		color: #603A21;
+		opacity: 0.85;
+	}
+
+	// 1. TOP TABS BAR
+	.l-cate-top-wrapper {
+		margin-bottom: 50px;
+		border-bottom: 1.5px solid rgba(229, 213, 197, 0.6);
+		width: 100%;
+	}
+
+	.l-cate-top {
+		display: flex;
+		justify-content: space-between;
+		max-width: 1140px;
+		margin: 0 auto;
+		padding: 0;
+
+		.item {
+			flex: 1;
+			text-align: center;
+			padding: 24px 10px;
+			cursor: pointer;
+			position: relative;
+			transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
+			// Vertically centered thin separator line between tabs
+			&:not(:last-child)::before {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 1px;
+				height: 45px;
+				background-color: rgba(229, 213, 197, 0.8);
+			}
+
+			.inner {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 12px;
+			}
+
+			.inner-icon {
+				width: 72px;
+				height: 72px;
+				border-radius: 50%;
+				border: 1.5px solid #D7A444;
+				background-color: #FFFDF9;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+				box-shadow: 0 4px 12px rgba(96, 58, 33, 0.04);
+
+				img {
+					width: 38px;
+					height: 38px;
+					object-fit: contain;
+					transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+					filter: brightness(0) saturate(100%) invert(67%) sepia(54%) saturate(415%) hue-rotate(357deg) brightness(91%) contrast(85%); // gold color
+				}
+			}
+
+			.inner-title {
+				font-size: 13.5px;
+				font-weight: 700;
+				text-transform: capitalize;
+				color: #603A21;
+				margin-bottom: 0;
+				letter-spacing: 0.4px;
+				font-family: "Poltawski Nowy", serif;
+				transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+
+			&:hover, &.active {
+				background-color: rgba(215, 164, 68, 0.02);
+
+				.inner-icon {
+					background-color: #D7A444;
+					border-color: #D7A444;
+					box-shadow: 0 6px 16px rgba(215, 164, 68, 0.25);
+					transform: translateY(-2px);
+
+					img {
+						filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7483%) hue-rotate(34deg) brightness(103%) contrast(100%); // white color
+					}
+				}
+
+				.inner-title {
+					color: #D7A444;
+				}
+			}
+		}
+	}
+
+	// 2. SLIDER AREA
+	.l-cate-slide-wrapper {
+		position: relative;
+		padding: 20px 0 40px;
+
+		// Center active card focus styling
+		.slick-list {
+			overflow: visible; // Allows popping cards to show overflow shadow
+			padding: 20px 0 !important;
+		}
+
+		.slide-item {
+			outline: none;
+			padding: 0 15px;
+			transition: all 0.4s ease;
+
+			.inner {
+				min-height: 300px;
+				padding: 30px;
+				border-radius: 20px;
+				border: 1.5px solid #E5D5C5;
+				background-color: #FFFDF9;
+				box-shadow: 0 8px 24px rgba(96, 58, 33, 0.04);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				position: relative;
+				overflow: hidden;
+				transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+				z-index: 1;
+			}
+
+			// Slide elements
+			.slide-card-content {
+				position: relative;
+				z-index: 5;
+				max-width: 85%;
+				transition: all 0.4s ease;
+			}
+
+			.slide-card-header {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+				margin-bottom: 18px;
+			}
+
+			.slide-card-icon {
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				border: 1.5px solid #D7A444;
+				background-color: #FFFDF9;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+				transition: all 0.4s ease;
+
+				img.icon-svg {
+					width: 32px;
+					height: 32px;
+					object-fit: contain;
+					transition: all 0.4s ease;
+					filter: brightness(0) saturate(100%) invert(67%) sepia(54%) saturate(415%) hue-rotate(357deg) brightness(91%) contrast(85%); // gold color
+				}
+			}
+
+			.slide-card-title {
+				font-family: "Poltawski Nowy", serif;
+				font-size: 21px;
+				font-weight: 700;
+				color: #603A21;
+				margin-bottom: 0;
+				transition: all 0.4s ease;
+			}
+
+			.slide-card-desc {
+				font-size: 14px;
+				line-height: 1.6;
+				color: #707070;
+				margin-bottom: 18px;
+				transition: all 0.4s ease;
+			}
+
+			.slide-card-link {
+				font-size: 14.5px;
+				font-weight: 700;
+				color: #D7A444;
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				text-transform: capitalize;
+				transition: all 0.3s ease;
+				text-decoration: none;
+
+				i {
+					transition: transform 0.3s ease;
+				}
+
+				&:hover {
+					color: #3D2411;
+
+					i {
+						transform: translateX(4px);
+					}
+				}
+			}
+
+			// Inactive Hover Pop
+			&:not(.slick-center) {
+				.inner:hover {
+					transform: translateY(-4px);
+					box-shadow: 0 12px 30px rgba(96, 58, 33, 0.08);
+					border-color: #D7A444;
+				}
+			}
+
+			// 3. ACTIVE SLICK CENTER CARD (Dark gradient + anatomical background image overlay)
+			&.slick-center {
+				transform: scale(1.04);
+				z-index: 10;
+
+				.inner {
+					background-color: #3D2411;
+					// Premium horizontal gradient: #3D2411 Stop 1 (20%) -> #603A21 Stop 2 (100% with 0% opacity)
+					background-image: linear-gradient(90deg, #3D2411 20%, rgba(96, 58, 33, 0) 100%), var(--bg-url);
+					background-repeat: no-repeat;
+					background-position: right center;
+					background-size: contain;
+					border-color: #D7A444;
+					box-shadow: 0 20px 45px rgba(61, 36, 17, 0.28);
+				}
+
+				.slide-card-content {
+					max-width: 58%; // Keeps text to the left so it doesn't overlap the right illustration
+				}
+
+				.slide-card-icon {
+					background-color: #3D2411;
+					border-color: #D7A444;
+					box-shadow: 0 4px 12px rgba(215, 164, 68, 0.15);
+
+					img.icon-svg {
+						filter: brightness(0) saturate(100%) invert(67%) sepia(54%) saturate(415%) hue-rotate(357deg) brightness(91%) contrast(85%); // gold color
+					}
+				}
+
+				.slide-card-title {
+					color: #D7A444;
+				}
+
+				.slide-card-desc {
+					color: #E5D5C5;
+					opacity: 0.9;
+				}
+
+				.slide-card-link {
+					color: #D7A444;
+
+					&:hover {
+						color: #FFFDF9;
+					}
+				}
+			}
+		}
+
+		// Dots Custom Styling as Horizontal Dash/Line Indicators
+		.slick-dots {
+			bottom: -35px;
+			display: flex !important;
+			justify-content: center;
+			align-items: center;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				margin: 0 6px;
+				width: 24px;
+				height: 4px;
+				transition: all 0.3s ease;
+
+				button {
+					width: 24px;
+					height: 4px;
+					padding: 0;
+					background-color: #E5D5C5;
+					border: none;
+					border-radius: 2px;
+					text-indent: -9999px;
+					overflow: hidden;
+					opacity: 0.7;
+					transition: all 0.3s ease;
+
+					&::before {
+						display: none;
+					}
+				}
+
+				&.slick-active {
+					width: 32px;
+
+					button {
+						background-color: #D7A444;
+						opacity: 1;
+						width: 32px;
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,345 @@
+// Header Component styling
+
+.header {
+	width: 100%;
+	position: relative;
+	z-index: 999;
+	font-family: "Inter", sans-serif;
+
+	// Seamless Meander pattern border line
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 14px;
+		background-color: $color_brown;
+		background-image: url('../images/line-section.png');
+		background-repeat: repeat-x;
+		background-position: center bottom;
+		border: none;
+	}
+
+	// 1. TOP BAR
+	&-top {
+		background-color: #FAF7F1;
+		padding: 8px 0;
+		border-bottom: 1px solid rgba(61, 36, 17, 0.1);
+
+		&-inner {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 8px;
+		}
+	}
+
+	&-branch {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 6px;
+
+		.branch-item {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			font-size: 11px;
+			color: $color_brown_d;
+			font-weight: 500;
+
+			.icon {
+				width: 12px;
+				height: 12px;
+				object-fit: contain;
+				flex-shrink: 0;
+			}
+
+			.text {
+				color: $color_black;
+
+				strong {
+					font-weight: 700;
+				}
+			}
+
+			a.text {
+				transition: color 0.2s ease-in-out;
+				text-decoration: none;
+
+				&:hover {
+					color: $color_yelow;
+				}
+			}
+		}
+
+		.branch-separator {
+			color: rgba(61, 36, 17, 0.3);
+			font-size: 11px;
+			user-select: none;
+		}
+	}
+
+	// 2. MAIN HEADER BAR
+	&-main {
+		background-color: $color_brown;
+		position: relative;
+		padding: 0 70px;
+
+		&-inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 80px;
+		}
+	}
+
+	&-logo {
+		height: 48px;
+		display: flex;
+		align-items: center;
+
+		a {
+			display: inline-block;
+			height: 100%;
+		}
+
+		img {
+			height: 100%;
+			width: auto;
+			object-fit: contain;
+		}
+	}
+
+	&-toggle {
+		background: none;
+		border: none;
+		padding: 8px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		outline: none;
+		margin-left: -8px;
+		transition: opacity 0.2s ease;
+
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+			outline: none;
+		}
+
+		img {
+			width: 26px;
+			height: auto;
+		}
+	}
+
+	&-nav {
+		height: 100%;
+	}
+
+	&-menu {
+		display: flex;
+		align-items: center;
+		gap: 28px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		height: 100%;
+
+		.menu-item {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			position: relative;
+
+			a {
+				color: $color_white;
+				font-size: 15px;
+				font-weight: 600;
+				text-decoration: none;
+				transition: color 0.25s ease;
+				padding: 10px 0;
+
+				&:hover {
+					color: $color_yelow;
+				}
+			}
+
+			&.active {
+				a {
+					color: $color_yelow;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 3px;
+					background-color: $color_yelow;
+				}
+			}
+		}
+	}
+
+	&-action {
+		display: flex;
+		align-items: center;
+	}
+
+	.btn-booking {
+		background-color: $color_yelow;
+		color: $color_white;
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: capitalize;
+		padding: 10px 22px;
+		border-radius: 8px;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		text-decoration: none;
+		transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+		.icon {
+			width: 16px;
+			height: 16px;
+			object-fit: contain;
+			transition: transform 0.3s ease;
+		}
+
+		&:hover {
+			background-color: $color_yelow;
+			color: $color_white;
+			transform: translateY(-2px);
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+			.icon {
+				transform: rotate(-10deg) scale(1.1);
+			}
+		}
+
+		&:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	// 3. MOBILE MENU COLLAPSIBLE DRAWER
+	&-mobile-menu {
+		background-color: $color_brown_d;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+		border-top: 1px solid rgba(215, 164, 68, 0.15);
+
+		&.is-open {
+			max-height: 350px;
+		}
+
+		.mobile-menu-list {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			.menu-item {
+				border-bottom: 1px solid rgba(215, 164, 68, 0.08);
+
+				a {
+					display: block;
+					padding: 12px 20px;
+					color: $color_white;
+					font-size: 14px;
+					font-weight: 600;
+					text-decoration: none;
+					transition: all 0.2s ease;
+
+					&:hover {
+						color: $color_yelow;
+						padding-left: 24px;
+						background-color: rgba(215, 164, 68, 0.05);
+					}
+				}
+
+				&.active {
+					a {
+						color: $color_yelow;
+						border-left: 3px solid $color_yelow;
+						padding-left: 17px;
+						background-color: rgba(215, 164, 68, 0.05);
+					}
+				}
+			}
+		}
+	}
+}
+
+// 4. RESPONSIVE BREAKPOINTS (Mobile first modifications)
+@media (max-width: 991px) {
+	.header {
+		&-main-inner {
+			height: 70px;
+		}
+
+		&-logo {
+			height: 38px;
+			position: absolute;
+			left: 35%;
+			transform: translateX(-50%);
+		}
+
+		.btn-booking {
+			padding: 8px 14px;
+			font-size: 12px;
+			border-radius: 6px;
+
+			.icon {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.header {
+		&-top {
+			padding: 6px 0;
+		}
+
+		&-main {
+			padding: 0 15px;
+		}
+
+		&-top-inner {
+			justify-content: space-between;
+			gap: 4px 12px;
+		}
+
+		&-branch {
+			justify-content: center;
+
+			.branch-item {
+				font-size: 9.5px;
+			}
+
+			.branch-separator {
+				font-size: 9.5px;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.header {
+		.btn-booking {
+			.btn-text {
+				display: inline; // Keep it as in MB-Header mockup (it displays "Đặt lịch khám")
+			}
+		}
+	}
+}

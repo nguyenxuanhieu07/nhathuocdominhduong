@@ -1,0 +1,1313 @@
+// Homepage styling - Banner Section
+
+.section-banner {
+	background-image: url('../images/section/banner/banner.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	position: relative;
+	height: 770px;
+	display: flex;
+	align-items: flex-end;
+	width: 100%;
+	z-index: 1;
+}
+
+.banner-container {
+	position: relative;
+	z-index: 2;
+	transform: translateY(50%);
+}
+
+// 1. FLOATING INFO BOX
+.banner-info-box {
+	background: linear-gradient(180deg, rgb(61, 36, 17) 0%, rgb(96, 58, 33) 100%);
+	border: 1px solid $color_yelow;
+	border-radius: 18px;
+	padding: 24px 0;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+	width: 100%;
+
+	.info-item-col {
+		border-right: 1px solid rgba(215, 164, 68, 0.35);
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+}
+
+// 2. INFO ITEM
+.info-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+	height: 100%;
+	padding: 10px 15px;
+	transition: transform 0.25s ease;
+
+	.info-icon {
+		width: 74px;
+		height: 74px;
+		border-radius: 50%;
+		border: 1px solid $color_yelow;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.3s ease;
+		flex-shrink: 0;
+
+		img {
+			width: 46px;
+			height: 46px;
+			object-fit: contain;
+		}
+	}
+
+	.info-title {
+		font-size: 16px;
+		font-weight: 700;
+		color: $color_yelow;
+		text-transform: uppercase;
+		margin-bottom: 2px;
+		letter-spacing: 0.5px;
+		font-family: "Poltawski Nowy", serif;
+		margin-bottom: 5px;
+	}
+
+	.info-desc {
+		font-size: 14px;
+		color: $color_white;
+		margin-bottom: 0;
+		line-height: 1.4;
+	}
+
+	&:hover {
+		transform: translateY(-2px);
+
+		.info-icon {
+			transform: scale(1.1);
+		}
+	}
+}
+
+// 3. RESPONSIVE BREAKPOINTS (Mobile adjustments matching section-banner-mb)
+@media (max-width: 1199px) {
+	.section-banner {
+		height: 520px;
+	}
+
+	.info-item {
+		.info-title {
+			font-size: 12px;
+		}
+
+		.info-desc {
+			font-size: 11px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.section-banner {
+		background-image: url('../images/section/banner/banner-mb.jpg');
+		height: auto;
+		min-height: 650px;
+		padding-top: 240px;
+		padding-bottom: 25px;
+		align-items: flex-end;
+	}
+
+	.banner-info-box {
+		padding: 0;
+		border-radius: 16px;
+		position: relative;
+
+		.info-item-col {
+			border-right: none;
+			border-bottom: none;
+
+			&:nth-child(1) {
+				&::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 1px;
+					height: 85%;
+					background-color: $color_yelow_d;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 90%;
+					height: 1px;
+					background-color: $color_yelow_d;
+				}
+			}
+
+			&:nth-child(4) {
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 1px;
+					height: 85%;
+					background-color: $color_yelow_d;
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 90%;
+					height: 1px;
+					background-color: $color_yelow_d;
+				}
+			}
+
+			// // Vertical divider (left column gets border-right)
+			// &:nth-child(odd) {
+			// 	border-right: 1px solid $color_yelow_d;
+			// }
+
+			// // Horizontal divider (top row: 1st and 2nd items get border-bottom)
+			// &:nth-child(-n+2) {
+			// 	border-bottom: 1px solid $color_yelow_d;
+			// }
+		}
+	}
+
+	.info-item {
+		flex-direction: row;
+		text-align: left;
+		align-items: center;
+		gap: 12px;
+		padding: 16px 14px;
+
+		.info-icon {
+			width: 50px;
+			height: 50px;
+			flex-shrink: 0;
+
+			img {
+				width: 31px;
+				height: 31px;
+			}
+		}
+
+		.info-title {
+			font-size: 12.5px;
+			margin-bottom: 2px;
+		}
+
+		.info-desc {
+			font-size: 11px;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.section-banner {
+		min-height: 600px;
+		padding-top: 260px;
+	}
+
+	.info-item {
+		padding: 14px 10px;
+		gap: 8px;
+
+		.info-icon {
+			width: 50px;
+			height: 50px;
+		}
+
+		.info-title {
+			font-size: 13px;
+		}
+
+		.info-desc {
+			font-size: 13px;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.section-banner {
+		min-height: 560px;
+		padding-top: 240px;
+	}
+
+	.info-item {
+		padding: 12px 6px;
+		gap: 6px;
+
+		.info-icon {
+			width: 30px;
+			height: 30px;
+		}
+
+		.info-title {
+			font-size: 10.5px;
+		}
+
+		.info-desc {
+			font-size: 9.5px;
+		}
+	}
+}
+
+// ======================
+// Section Sứ mệnh
+// ======================
+.section-sumenh {
+	background-color: #FAF5ED;
+	background-image: url('../images/section/sumenh/sumenh-img.png');
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-size: contain;
+	padding: 80px 0;
+	overflow: hidden;
+
+	@media (min-width: 1200px) {
+		background-position: right calc((100% - 1140px) / 2) top;
+		background-size: 50% auto;
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		background-position: right calc((100% - 960px) / 2) top;
+		background-size: 50% auto;
+	}
+
+	.sumenh-content-col {
+		padding-top: 70px;
+	}
+
+	.sumenh-subheading {
+		color: $color_yelow;
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 12px;
+		font-family: "Inter", sans-serif;
+	}
+
+	.sumenh-heading {
+		font-family: "Poltawski Nowy", serif;
+		font-size: 30px;
+		color: $color_brown;
+		font-weight: 700;
+		line-height: 1.35;
+		margin-bottom: 24px;
+	}
+
+	.sumenh-desc {
+		font-size: 14px;
+		color: $color_gray;
+		line-height: 1.6;
+		margin-bottom: 30px;
+
+		p {
+			margin-bottom: 12px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			strong {
+				font-weight: 700;
+			}
+		}
+	}
+
+	// Features List
+	.sumenh-features {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		// gap: 15px;
+		margin-top: 30px;
+		margin-bottom: 35px;
+
+		.feature-item {
+			flex: 0 0 auto;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			justify-content: flex-start;
+			position: relative;
+			transition: transform 0.3s ease;
+
+			.feature-icon {
+				width: 32px;
+				height: 32px;
+				object-fit: contain;
+				flex-shrink: 0;
+				transition: transform 0.3s ease;
+			}
+
+			.feature-title {
+				color: $color_yelow;
+				font-size: 16px;
+				font-weight: 700;
+				margin-bottom: 2px;
+				font-family: "Poltawski Nowy", serif;
+			}
+
+			.feature-desc {
+				color: $color_gray;
+				font-family: "Poltawski Nowy", serif;
+				text-transform: capitalize;
+				font-size: 14px;
+				margin-bottom: 0;
+			}
+
+			&:not(:last-child) {
+				margin-right: 10px;
+				padding-right: 10px;
+
+				&::after {
+					content: "";
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 1px;
+					height: 100%;
+					background-color: $color_yelow;
+				}
+			}
+
+			&:hover {
+				transform: translateY(-3px);
+
+				.feature-icon {
+					transform: scale(1.12);
+				}
+			}
+		}
+	}
+
+	// Sứ mệnh Box
+	.sumenh-box {
+		border: 1px solid $color_yelow;
+		border-radius: 18px;
+		overflow: hidden;
+		display: flex;
+		align-items: stretch;
+		box-shadow: 0 4px 15px rgba(61, 36, 17, 0.05);
+		width: 100%;
+		transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+		&:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 12px 30px rgba(61, 36, 17, 0.12);
+			border-color: $color_yelow;
+
+			.box-left .box-icon {
+				transform: scale(1.1) rotate(6deg);
+			}
+		}
+
+		.box-left {
+			background-color: $color_brown;
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			padding: 30px;
+			flex: 0 0 auto;
+			border-radius: 18px;
+
+			.box-icon {
+				width: 65px;
+				height: 84px;
+				object-fit: contain;
+				flex-shrink: 0;
+				transition: transform 0.4s ease;
+			}
+
+			.box-title-wrap {
+				.box-title-sm {
+					color: $color_yelow;
+					font-size: 30px;
+					font-weight: 700;
+					text-transform: uppercase;
+					margin-bottom: 2px;
+					letter-spacing: 0.5px;
+					font-family: "Poltawski Nowy", serif;
+				}
+
+				.box-title-lg {
+					color: $color_white;
+					font-size: 24px;
+					font-weight: 500;
+					margin-bottom: 0;
+					font-family: "Poltawski Nowy", serif;
+				}
+			}
+		}
+
+		.box-right {
+			background-color: $color_white;
+			padding: 20px 24px;
+			flex: 1;
+			display: flex;
+			align-items: center;
+
+			.box-desc {
+				color: $color_brown;
+				font-size: 14px;
+				line-height: 1.6;
+				margin-bottom: 0;
+				font-weight: 500;
+				font-family: "Inter", sans-serif;
+			}
+		}
+	}
+}
+
+// Responsive Breakpoints for Mission section
+@media (max-width: 1199px) {
+	.section-sumenh {
+		.sumenh-heading {
+			font-size: 28px;
+		}
+
+		.sumenh-box {
+			.box-left {
+				flex: 0 0 230px;
+				padding: 16px;
+				gap: 10px;
+
+				.box-title-wrap {
+					.box-title-sm {
+						font-size: 18px;
+					}
+
+					.box-title-lg {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.section-sumenh {
+		padding: 50px 0;
+		background-image: none; // Hide background image on tablet/mobile
+
+		.sumenh-mobile-img-col {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 15px;
+
+			.sumenh-gate-img-mb {
+				max-width: 85%;
+				height: auto;
+				object-fit: contain;
+				transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+				&:hover {
+					transform: scale(1.025);
+				}
+			}
+		}
+
+		.sumenh-content-col {
+			padding-right: 15px;
+			padding-top: 0;
+		}
+
+		.sumenh-heading {
+			font-size: 24px;
+			margin-bottom: 16px;
+		}
+
+		.sumenh-desc {
+			font-size: 13.5px;
+			margin-bottom: 24px;
+		}
+
+		.sumenh-features {
+			padding: 12px 0;
+			margin-top: 20px;
+			margin-bottom: 24px;
+			gap: 10px;
+
+			.feature-item {
+				flex-direction: column;
+				text-align: center;
+				gap: 6px;
+				padding: 0 5px;
+
+				.feature-icon {
+					width: 28px;
+					height: 28px;
+				}
+
+				.feature-title {
+					font-size: 13px;
+				}
+
+				.feature-desc {
+					font-size: 11px;
+				}
+			}
+		}
+
+		.sumenh-box {
+			flex-direction: column;
+			box-shadow: 0 6px 18px rgba(61, 36, 17, 0.08);
+
+			.box-left {
+				flex: none;
+				gap: 20px;
+				padding: 27px 39px;
+
+				.box-title-wrap {
+					.box-title-sm {
+						font-size: 30px;
+						margin-bottom: 4px;
+					}
+
+					.box-title-lg {
+						font-size: 24px;
+					}
+				}
+			}
+
+			.box-right {
+				padding: 20px;
+				text-align: center;
+				justify-content: center;
+
+				.box-desc {
+					font-size: 13.5px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.section-sumenh {
+		.sumenh-mobile-img-col {
+			.sumenh-gate-img-mb {
+				max-width: 100%;
+			}
+		}
+
+		.sumenh-features {
+			gap: 4px;
+
+			.feature-item {
+				padding: 0 2px;
+
+				.feature-icon {
+					width: 24px;
+					height: 24px;
+				}
+
+				.feature-title {
+					font-size: 14px;
+				}
+
+				.feature-desc {
+					font-size: 13px;
+				}
+			}
+		}
+	}
+}
+
+// ======================
+// Section Chuyên gia (Expert)
+// ======================
+.section-expert {
+	background-color: $color_brown_d; // #2A1A09
+	background-image: url('../images/section/expert/bg-expert.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	padding: 80px 0;
+	position: relative;
+	overflow: hidden;
+
+	// Center layout inside container
+	.container {
+		position: relative;
+		z-index: 2;
+	}
+
+	.expert-top-row {
+		margin-bottom: 45px;
+	}
+
+	// Subheading, Heading, Description
+	.expert-subheading {
+		color: $color_yelow;
+		font-size: 14px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.8px;
+		margin-bottom: 12px;
+		font-family: "Inter", sans-serif;
+	}
+
+	.expert-heading {
+		font-family: "Poltawski Nowy", serif;
+		font-size: 30px;
+		color: $color_white;
+		font-weight: 700;
+		line-height: 1.3;
+		margin-bottom: 20px;
+	}
+
+	.expert-desc {
+		font-size: 14px;
+		color: $color_yelow_light;
+		line-height: 1.6;
+		margin-bottom: 30px;
+		max-width: 500px;
+	}
+
+	// Features
+	.expert-features {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		margin-top: 30px;
+
+		.feature-item {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+
+			.feature-icon {
+				width: 40px;
+				height: 40px;
+				object-fit: contain;
+				flex-shrink: 0;
+			}
+
+			.feature-text {
+				display: flex;
+				flex-direction: column;
+
+				span {
+					font-size: 16px;
+					font-weight: 700;
+					color: $color_white;
+					line-height: 1.25;
+					font-family: "Poltawski Nowy", serif;
+				}
+			}
+		}
+
+		.feature-divider {
+			width: 1px;
+			height: 30px;
+			background-color: rgba($color_yelow, 0.35);
+			flex-shrink: 0;
+		}
+	}
+
+	// Right Highlight Doctor Block
+	.expert-highlight-block {
+		display: flex;
+		align-items: flex-end;
+		gap: 30px;
+		position: relative;
+
+		.highlight-img-wrap {
+			flex: 0 0 45%;
+			max-width: 45%;
+			margin-bottom: -80px; // Negative margin for portrait overlap
+			position: relative;
+			z-index: 2;
+
+			.highlight-img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+
+		.highlight-info {
+			flex: 1;
+			background-color: transparent;
+			padding-bottom: 20px;
+
+			.highlight-badge-wrap {
+				margin-bottom: 15px;
+			}
+
+			.highlight-badge {
+				display: inline-block;
+				padding: 10px 12px;
+				background-color: $color_brown;
+				border: 1px solid $color_yelow_light;
+				border-radius: 10px;
+				color: $color_yelow_light;
+				font-size: 14px;
+				font-weight: 700;
+				text-transform: capitalize;
+			}
+
+			.highlight-role {
+				font-family: "Poltawski Nowy", serif;
+				display: block;
+				color: $color_yelow;
+				font-size: 18px;
+				font-weight: 600;
+				margin-bottom: 6px;
+			}
+
+			.highlight-name {
+				font-family: "Poltawski Nowy", serif;
+				font-size: 24px;
+				color: $color_white;
+				font-weight: 700;
+				margin-bottom: 20px;
+			}
+
+			.highlight-bullets {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+
+				li {
+					color: rgba($color_white, 0.85);
+					font-size: 14px;
+					line-height: 1.6;
+					position: relative;
+					padding-left: 18px;
+					margin-bottom: 12px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					&::before {
+						content: "";
+						position: absolute;
+						left: 0;
+						top: 8px;
+						width: 6px;
+						height: 6px;
+						border-radius: 50%;
+						background-color: $color_yelow;
+					}
+				}
+			}
+		}
+	}
+
+	// Slider area styling
+	.expert-slider-wrap {
+		position: relative;
+		margin-top: 50px;
+	}
+
+	.expert-slider {
+		margin: 0 -15px;
+
+		.slick-list {
+			overflow: hidden;
+		}
+	}
+
+	.expert-slide-item {
+		padding: 0 15px;
+		outline: none;
+	}
+
+	.expert-card {
+		background-color: $color_brown;
+		border: 1px solid rgba($color_yelow, 0.25);
+		border-radius: 18px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+		transition: border-color 0.3s ease;
+
+		&:hover {
+			border-color: rgba($color_yelow, 0.7);
+		}
+
+		.expert-card-img-wrap {
+			height: 310px;
+			overflow: hidden;
+			background-color: #e5cec4;
+			position: relative;
+
+			.expert-card-img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+		}
+
+		.expert-card-info {
+			border-radius: 18px;
+			padding: 24px 20px;
+			background-color: $color_brown;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			flex-grow: 1;
+
+			.expert-card-role {
+				font-size: 17px;
+				color: $color_yelow;
+				font-weight: 500;
+				margin-bottom: 0;
+				display: block;
+				font-family: "Poltawski Nowy", serif;
+			}
+
+			.expert-card-name {
+				font-family: "Poltawski Nowy", serif;
+				font-size: 22px;
+				color: $color_white;
+				font-weight: 700;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// Slider Navigation Arrow Styling
+	.slick-prev,
+	.slick-next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background-color: rgba($color_brown, 0.8);
+		border: 1px solid $color_yelow;
+		color: $color_yelow;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 10;
+		transition: all 0.3s ease;
+
+		i {
+			font-size: 18px;
+			line-height: 1;
+		}
+
+		&:hover {
+			background-color: $color_yelow;
+			color: $color_white;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.slick-prev {
+		left: -15px;
+	}
+
+	.slick-next {
+		right: -15px;
+	}
+
+	// Slick Dots (Mobile)
+	.slick-dots {
+		position: absolute;
+		bottom: -35px;
+		display: flex !important;
+		justify-content: center;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+
+		li {
+			margin: 0 5px;
+
+			button {
+				border: none;
+				background: transparent;
+				padding: 0;
+				width: 8px;
+				height: 8px;
+				font-size: 0;
+				line-height: 0;
+				cursor: pointer;
+				position: relative;
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 8px;
+					height: 8px;
+					border-radius: 50%;
+					background-color: rgba($color_white, 0.4);
+					transition: all 0.3s ease;
+				}
+			}
+
+			&.slick-active {
+				button::before {
+					background-color: $color_yelow;
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+
+	// Bottom Statistics Box
+	.expert-stats-wrap {
+		background-color: $color_yelow_d; // #FFFAEA
+		border: 1px solid $color_yelow_d; // #D7BB88
+		border-radius: 20px;
+		margin-top: 40px;
+		position: relative;
+		z-index: 2;
+
+		.stat-item-col {
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+
+			&:not(:last-child) {
+				&::after {
+					content: '';
+					position: absolute;
+					width: 1px;
+					height: 80%;
+					background: $color_yelow_bg;
+					right: 0;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			.stat-item {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				width: 100%;
+
+				.stat-icon-wrap {
+					width: 60px;
+					height: 60px;
+					background-color: transparent; // #F6E8CC
+					border-radius: 50%;
+					border: 1px solid $color_brown;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-shrink: 0;
+
+					.stat-icon {
+						width: 24px;
+						height: 24px;
+						object-fit: contain;
+					}
+				}
+
+				.stat-content {
+					display: flex;
+					flex-direction: column;
+
+					.stat-number {
+						font-family: "Poltawski Nowy", serif;
+						font-size: 24px;
+						font-weight: 700;
+						color: $color_brown;
+						margin-bottom: 2px;
+						line-height: 1.1;
+					}
+
+					.stat-label {
+						font-size: 16px;
+						font-weight: 700;
+						color: $color_brown;
+						margin-bottom: 2px;
+						text-transform: capitalize;
+					}
+
+					.stat-desc {
+						font-size: 12px;
+						color: $color_gray;
+						margin-bottom: 0;
+						line-height: 1.35;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@media (max-width: 1199px) {
+	.section-expert {
+		.expert-heading {
+			font-size: 28px;
+		}
+
+		.expert-highlight-block {
+			.highlight-name {
+				font-size: 24px;
+			}
+		}
+
+		.expert-slider-wrap {
+			padding: 0 35px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.section-expert {
+		background-image: url('../images/section/expert/bg-expert-mb.jpg');
+		padding: 60px 0 80px 0;
+
+		.expert-top-row {
+			gap: 40px;
+			margin-bottom: 5px;
+		}
+
+		.expert-left-col {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.expert-desc {
+			max-width: 100%;
+		}
+
+		.expert-features {
+			justify-content: center;
+			width: 100%;
+		}
+
+		.expert-highlight-block {
+			flex-direction: row;
+			align-items: center;
+			text-align: center;
+			margin-top: 0;
+			gap: 15px;
+
+			.highlight-img-wrap {
+				max-width: 240px;
+				margin-bottom: 0;
+				margin-top: -80px;
+				margin-left: -15px;
+			}
+
+			.highlight-info {
+				width: 100%;
+				padding-bottom: 0;
+
+				.highlight-bullets {
+					display: inline-block;
+					text-align: left;
+					max-width: 320px;
+
+					li {
+						font-size: 13px;
+						margin-bottom: 5px;
+					}
+				}
+
+				.highlight-role {
+					text-align: left;
+					font-size: 15px;
+				}
+
+				.highlight-name {
+					font-size: 20px;
+					text-align: left;
+				}
+
+				.highlight-badge {
+					font-size: 13px;
+					text-align: left;
+				}
+			}
+		}
+
+		.expert-slider-wrap {
+			padding: 0;
+			margin-top: 0;
+		}
+
+		.expert-stats-wrap {
+			margin-top: 30px;
+			padding: 0;
+
+			.stat-item-col {
+				padding: 20px 12px;
+
+				&:nth-child(odd) {
+					&::after {
+						content: "";
+						position: absolute;
+						width: 1px;
+						height: 80%;
+						background: #FFFAEA;
+						right: 0;
+						top: 50%;
+						transform: translate(-50%, -50%);
+					}
+				}
+
+				&:nth-child(even) {
+					&::after {
+						display: none;
+					}
+				}
+
+				&:nth-child(1),
+				&:nth-child(2) {
+					&::before {
+						content: "";
+						position: absolute;
+						width: 80%;
+						height: 1px;
+						background: #FFFAEA;
+						left: 20px;
+						bottom: 0;
+					}
+				}
+
+				&:nth-child(2) {
+					&::before {
+						right: 20px;
+						left: auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.section-expert {
+		padding: 60px 0;
+
+		.expert-heading {
+			font-size: 25px;
+			text-align: center;
+			margin-bottom: 12px;
+
+			br {
+				display: none;
+			}
+		}
+
+		.expert-subheading {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		.expert-features {
+			flex-direction: row;
+			gap: 12px;
+
+			.feature-divider {
+				width: 1px;
+				height: 40px;
+			}
+
+			.feature-item {
+				flex-flow: column;
+			}
+		}
+
+
+		.expert-stats-wrap {
+			.stat-item-col {
+
+				.stat-item {
+					flex-direction: row;
+					text-align: left;
+					gap: 10px;
+
+					.stat-content {
+						.stat-number {
+							font-size: 20px;
+							text-align: left;
+						}
+
+						.stat-label {
+							font-size: 13px;
+						}
+					}
+
+					.stat-icon-wrap {
+						width: 44px;
+						height: 44px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.section-expert {
+
+		.expert-heading {
+			font-size: 24px;
+		}
+
+		.expert-highlight-block {
+			.highlight-img-wrap {
+				max-width: 210px;
+				width: 210px;
+				margin-top: 0;
+				flex: 0 0 auto;
+			}
+		}
+
+		.expert-card {
+			.expert-card-img-wrap {
+				height: 220px;
+			}
+
+			.expert-card-info {
+				padding: 16px 10px;
+
+				.expert-card-role {
+					font-size: 11px;
+				}
+
+				.expert-card-name {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
